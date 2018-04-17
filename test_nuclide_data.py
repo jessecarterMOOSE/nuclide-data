@@ -254,3 +254,12 @@ def test_Nuclide_class_MAT():
     for nuc_id in nuc_ids:
         assert nuclide_data.Nuclide(nuc_id).mat == nuc_ids[nuc_id]
 
+
+if __name__ == "__main__":
+    for key, value in locals().items():
+        if callable(value) and value.__module__ == __name__:
+            if key.startswith('test_'):
+                print key
+                locals()[key]()
+
+    print 'all tests finished!'
